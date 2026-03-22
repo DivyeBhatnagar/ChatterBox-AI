@@ -1,5 +1,7 @@
 # ChatterBox AI 🤖
 
+**Built by [Divye Bhatnagar](https://github.com/DivyeBhatnagar)**
+
 > An elegant, modern AI chatbot application with advanced conversational capabilities, enterprise-grade security, and a beautiful user interface.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -55,7 +57,7 @@
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/chatterbox-ai.git
+git clone https://github.com/DivyeBhatnagar/ChatterBox-AI.git
 cd chatterbox-ai
 ```
 
@@ -280,9 +282,9 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 If you encounter any issues or have questions:
 
-1. **Check existing issues** - Browse [GitHub Issues](https://github.com/yourusername/chatterbox-ai/issues)
+1. **Check existing issues** - Browse [GitHub Issues](https://github.com/DivyeBhatnagar/ChatterBox-AI/issues)
 2. **Read documentation** - Review [GETTING_STARTED.md](./GETTING_STARTED.md)
-3. **Create an issue** - [Report a bug or request feature](https://github.com/yourusername/chatterbox-ai/issues/new)
+3. **Create an issue** - [Report a bug or request feature](https://github.com/DivyeBhatnagar/ChatterBox-AI/issues/new)
 
 ---
 
@@ -300,7 +302,9 @@ If you encounter any issues or have questions:
 
 ## 👥 Team
 
-Built with ❤️ by the ChatterBox AI team.
+Built with ❤️ by **Divye Bhatnagar**
+
+- **Developer & Creator** - [Divye Bhatnagar](https://github.com/DivyeBhatnagar)
 
 ---
 
@@ -308,6 +312,6 @@ Built with ❤️ by the ChatterBox AI team.
 
 **[⬆ back to top](#chatterbox-ai-)**
 
-Made with 🎨 and ☕ | [Report Bug](https://github.com/yourusername/chatterbox-ai/issues) | [Request Feature](https://github.com/yourusername/chatterbox-ai/issues)
+Made with 🎨 and ☕ by **Divye Bhatnagar** | [Report Bug](https://github.com/DivyeBhatnagar/ChatterBox-AI/issues) | [Request Feature](https://github.com/DivyeBhatnagar/ChatterBox-AI/issues)
 
 </div>
