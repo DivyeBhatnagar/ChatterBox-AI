@@ -1,0 +1,173 @@
+/* Monolith Theme - Global Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&family=Inter:wght@300;400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+:root {
+  /* Color Variables - Monolith Dark Theme */
+  --surface-bright: #393939;
+  --primary: #ffffff;
+  --on-secondary: #1c1b1b;
+  --on-secondary-fixed-variant: #3c3b3b;
+  --on-background: #e2e2e2;
+  --primary-fixed-dim: #454747;
+  --background: #131313;
+  --tertiary-fixed-dim: #454747;
+  --inverse-primary: #5d5f5f;
+  --primary-fixed: #5d5f5f;
+  --on-primary: #1a1c1c;
+  --on-primary-fixed-variant: #e2e2e2;
+  --surface: #131313;
+  --tertiary-container: #909191;
+  --surface-container-lowest: #0e0e0e;
+  --surface-dim: #131313;
+  --on-tertiary-fixed: #ffffff;
+  --secondary-fixed: #c8c6c5;
+  --surface-variant: #353535;
+  --inverse-on-surface: #303030;
+  --outline-variant: #474747;
+  --surface-container-highest: #353535;
+  --surface-container-low: #1b1b1b;
+  --secondary-container: #474646;
+  --on-primary-container: #000000;
+  --inverse-surface: #e2e2e2;
+  --surface-container-high: #2a2a2a;
+  --on-surface-variant: #c6c6c6;
+  --secondary: #c8c6c5;
+  --primary-container: #d4d4d4;
+  --tertiary: #e2e2e2;
+  --on-tertiary-container: #000000;
+  --on-tertiary-fixed-variant: #e2e2e2;
+  --on-error-container: #ffdad6;
+  --on-secondary-container: #e5e2e1;
+  --on-error: #690005;
+  --error: #ffb4ab;
+  --error-container: #93000a;
+  --surface-container: #1f1f1f;
+  --tertiary-fixed: #5d5f5f;
+  --on-tertiary: #1a1c1c;
+  --secondary-fixed-dim: #adabaa;
+  --on-secondary-fixed: #1c1b1b;
+  --outline: #919191;
+  --on-surface: #e2e2e2;
+  --surface-tint: #c6c6c7;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}
+
+/* Glassmorphism Effects */
+.glass-node {
+  background: rgba(57, 57, 57, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel {
+  background: rgba(57, 57, 57, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Monolith Gradient */
+.monolith-gradient {
+  background: radial-gradient(circle at center, #ffffff 0%, #d4d4d4 100%);
+}
+
+/* Obsidian Depth Shadow */
+.obsidian-depth {
+  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.8);
+}
+
+/* Animations */
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0e0e0e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #353535;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #474747;
+}
+
+/* Text Selection */
+::selection {
+  background-color: #ffffff;
+  color: #1a1c1c;
+}
+
+::-moz-selection {
+  background-color: #ffffff;
+  color: #1a1c1c;
+}
+
+/* Base Body Styles */
+body {
+  background-color: #131313;
+  color: #e2e2e2;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* Smooth Transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover,
+a:hover {
+  transition-duration: 200ms;
+}
+
+/* Remove Default Focus Rings */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
