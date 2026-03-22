@@ -26,41 +26,60 @@ class HeroErrorBoundary extends Component<
 
 export const HeroSection = () => {
   const titleRef = useRef<HTMLDivElement>(null);
+  const badgeRef = useRef<HTMLDivElement>(null);
   const subtitleRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const tl = gsap.timeline();
 
-    tl.from(titleRef.current, {
+    // Fade in background (0-0.3s)
+    tl.from(badgeRef.current, {
       opacity: 0,
-      y: 40,
-      duration: 1,
-      ease: 'power3.out',
-    })
+      scale: 0.8,
+      duration: 0.4,
+      ease: 'back.out',
+    }, 0.2)
+      // Subtitle fades in (1.0-1.5s)
       .from(
         subtitleRef.current,
         {
           opacity: 0,
           y: 30,
-          duration: 0.8,
+          duration: 0.6,
           ease: 'power3.out',
         },
-        '-=0.6'
+        0.8
       )
+      // CTA buttons fade and scale up (1.3-1.8s)
       .from(
-        ctaRef.current,
+        Array.from(ctaRef.current?.querySelectorAll('button') ?? []),
         {
           opacity: 0,
           y: 20,
-          duration: 0.8,
+          scale: 0.9,
+          duration: 0.5,
+          stagger: 0.15,
+          ease: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+        },
+        1.0
+      )
+      // Stats fade in
+      .from(
+        Array.from(statsRef.current?.querySelectorAll('div') ?? []),
+        {
+          opacity: 0,
+          y: 20,
+          duration: 0.5,
+          stagger: 0.08,
           ease: 'power3.out',
         },
-        '-=0.5'
+        1.3
       );
 
-    // Animate scroll indicator
+    // Animate scroll indicator (continuous)
     gsap.to(scrollRef.current, {
       y: 12,
       duration: 2,

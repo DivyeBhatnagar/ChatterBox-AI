@@ -1,324 +1,313 @@
-# AI Chatbot Application
+# ChatterBox AI 🤖
 
-A professional, production-grade AI chatbot built with React + TypeScript (frontend) and FastAPI + Python (backend), integrated with NVIDIA's OpenAI-compatible API for advanced language model capabilities.
+> An elegant, modern AI chatbot application with advanced conversational capabilities, enterprise-grade security, and a beautiful user interface.
 
-## 🎯 Features
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![React](https://img.shields.io/badge/React-18+-blue.svg)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5+-blue.svg)](https://www.typescriptlang.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)](https://fastapi.tiangolo.com)
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org)
 
-### Frontend
-- **Modern React + TypeScript** - Type-safe, maintainable code
-- **Dark Theme UI** - Professional, minimalist design inspired by leading AI platforms
-- **Chat Interface** - Clean message bubbles with distinction between user and AI responses
-- **Real-time Feedback** - Typing indicators, loading states, and smooth animations
-- **Markdown Support** - Formatted responses with syntax highlighting
-- **Message Management** - Copy, search, regenerate, and clear conversation
-- **Settings Panel** - Customize temperature, max tokens, and UI preferences
-- **Responsive Design** - Works seamlessly on mobile, tablet, and desktop
-- **Local Storage** - Persist conversation history and settings
-- **Error Handling** - User-friendly error messages and recovery UI
-- **Accessibility** - WCAG compliance with proper ARIA labels
+---
 
-### Backend
-- **FastAPI Framework** - Modern, fast Python web framework
-- **OpenAI Integration** - Compatible with NVIDIA's endpoint and other OpenAI-compatible APIs
-- **Rate Limiting** - Built-in request throttling per IP address
-- **Conversation Context** - Maintains message history for coherent multi-turn conversations
-- **Request Validation** - Input sanitization and validation
-- **Error Handling** - Graceful handling of API failures and rate limits
-- **Structured Logging** - Debug and monitor API calls
-- **CORS Support** - Seamless frontend-backend communication
-- **Health Check** - Endpoint for server status monitoring
-- **Retry Logic** - Automatic retries with exponential backoff
+## ✨ Features
+
+### 🎨 Frontend Excellence
+- **Modern React + TypeScript** - Type-safe, production-ready code
+- **Elegant Dark Theme** - Professionally designed UI inspired by leading AI platforms
+- **Smooth Animations** - CSS-powered animations for delightful interactions
+- **Responsive Design** - Perfect on mobile, tablet, and desktop
+- **Real-time Chat Interface** - Typing indicators and live message updates
+- **Message Management** - Copy, search, regenerate, and clear conversations
+- **Settings Customization** - Adjust temperature, tokens, and preferences
+- **Markdown Support** - Beautifully formatted responses with syntax highlighting
+- **Local Storage** - Persistent conversation history and settings
+- **Accessibility First** - WCAG compliant with proper ARIA labels
+
+### 🔧 Backend Capabilities
+- **FastAPI Framework** - Fast, modern Python web framework
+- **OpenAI Compatible API** - Works with NVIDIA's endpoint and other providers
+- **Smart Rate Limiting** - Request throttling for fair resource usage
+- **Context Awareness** - Multi-turn conversations with full message history
+- **Security First** - Input validation, error handling, and CORS support
+- **Scalable Architecture** - Designed for growth and high availability
+- **Health Monitoring** - Built-in status endpoints and logging
+- **Intelligent Retries** - Automatic retry logic with exponential backoff
+
+### 🎯 Design & UX
+- **MONOLITH Design System** - Cohesive, modern visual language
+- **Custom CSS Animations** - Smooth entrance and interaction animations
+- **Interactive Elements** - Engaging buttons, forms, and navigation
+- **Loading States** - Clear feedback during async operations
+- **Error Recovery** - Helpful error messages and recovery flows
+- **Landing Page** - Compelling hero, features, and CTA sections
+
+---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ (frontend)
-- Python 3.9+ (backend)
-- NVIDIA API Key (get one at https://build.nvidia.com/)
+- **Node.js** 18+ ([Download](https://nodejs.org))
+- **Python** 3.9+ ([Download](https://www.python.org))
+- **npm** or **yarn** (comes with Node.js)
+- **API Key** from [NVIDIA Build](https://build.nvidia.com/) or OpenAI
 
-### Backend Setup
+### 1️⃣ Clone the Repository
 
-1. **Navigate to backend directory**
-   ```bash
-   cd backend
-   ```
+```bash
+git clone https://github.com/yourusername/chatterbox-ai.git
+cd chatterbox-ai
+```
 
-2. **Create and activate virtual environment**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # Windows: venv\Scripts\activate
-   ```
+### 2️⃣ Backend Setup
 
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+# Navigate to backend directory
+cd backend
 
-4. **Configure environment**
-   ```bash
-   cp .env.example .env
-   # Edit .env and add your NVIDIA API key
-   ```
+# Create virtual environment
+python -m venv venv
 
-5. **Start the server**
-   ```bash
-   python main.py
-   ```
-   Server runs on http://localhost:8000
+# Activate virtual environment
+source venv/bin/activate  # macOS/Linux
+# or
+venv\Scripts\activate  # Windows
 
-### Frontend Setup
+# Install dependencies
+pip install -r requirements.txt
 
-1. **Navigate to frontend directory**
-   ```bash
-   cd frontend
-   ```
+# Configure environment variables
+cp .env.example .env  # Create .env file and add your API key
+```
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+**Environment Variables (.env):**
+```env
+OPENAI_API_KEY=your_api_key_here
+OPENAI_API_BASE=https://integrate.api.nvidia.com/v1
+OPENAI_MODEL=nvidia/meta-llama2-70b-chat
+ENVIRONMENT=development
+```
 
-3. **Configure environment (optional)**
-   ```bash
-   cp .env.example .env
-   # Adjust VITE_API_BASE_URL if backend is on different port
-   ```
+### 3️⃣ Frontend Setup
 
-4. **Start development server**
-   ```bash
-   npm run dev
-   ```
-   App runs on http://localhost:5173
+```bash
+# Navigate to frontend directory
+cd frontend
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`
+
+### 4️⃣ Run Backend
+
+```bash
+# From backend directory (with virtual environment activated)
+python main.py
+```
+
+Backend will run on `http://localhost:8000`
+
+---
 
 ## 📁 Project Structure
 
 ```
-Chatbot/
-├── backend/
-│   ├── app/
-│   │   ├── __init__.py
-│   │   ├── main.py          # FastAPI application and routes
-│   │   ├── config.py        # Settings and configuration
-│   │   ├── models.py        # Pydantic models
-│   │   ├── rate_limit.py    # Rate limiting logic
-│   │   └── services/
-│   │       ├── __init__.py
-│   │       └── openai_client.py  # OpenAI API integration
-│   ├── main.py              # Server entry point
-│   ├── requirements.txt      # Python dependencies
-│   ├── .env.example         # Environment template
-│   └── README.md            # Backend documentation
+chatterbox-ai/
+├── frontend/                          # React + TypeScript application
+│   ├── src/
+│   │   ├── components/               # React components
+│   │   │   ├── landing/              # Landing page components
+│   │   │   ├── auth/                 # Authentication UI
+│   │   │   ├── shared/               # Shared layout components
+│   │   │   └── ui/                   # Reusable UI elements
+│   │   ├── context/                  # React Context for state management
+│   │   ├── hooks/                    # Custom React hooks
+│   │   ├── lib/                      # Utilities and API client
+│   │   ├── routes/                   # Route protection and navigation
+│   │   ├── styles/                   # Global styles and animations
+│   │   ├── types/                    # TypeScript type definitions
+│   │   └── firebase/                 # Firebase configuration
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── vite.config.ts               # Vite build configuration
+│   └── tailwind.config.js            # Tailwind CSS configuration
 │
-└── frontend/
-    ├── src/
-    │   ├── components/
-    │   │   ├── ChatHeader.tsx         # Header with status
-    │   │   ├── ChatInput.tsx          # Message input area
-    │   │   ├── ChatMessageBubble.tsx  # Message display
-    │   │   ├── ErrorBoundary.tsx      # Error handling
-    │   │   ├── MessageSkeleton.tsx    # Loading state
-    │   │   ├── SettingsPanel.tsx      # Settings UI
-    │   │   └── TypingIndicator.tsx    # Typing animation
-    │   ├── lib/
-    │   │   └── api.ts                 # API client
-    │   ├── types/
-    │   │   └── chat.ts                # TypeScript definitions
-    │   ├── App.tsx                    # Main app component
-    │   ├── index.css                  # Tailwind & custom styles
-    │   └── main.tsx                   # React entry point
-    ├── index.html
-    ├── package.json
-    ├── vite.config.ts                 # Vite configuration
-    ├── tailwind.config.js             # Tailwind CSS config
-    ├── postcss.config.js              # PostCSS config
-    ├── .env.example                   # Environment template
-    └── tsconfig.json                  # TypeScript config
+├── backend/                           # FastAPI Python application
+│   ├── app/
+│   │   ├── main.py                  # Application entry point
+│   │   ├── config.py                # Configuration management
+│   │   ├── auth.py                  # Authentication logic
+│   │   ├── models.py                # Data models
+│   │   ├── rate_limit.py            # Rate limiting logic
+│   │   └── services/                # Business logic
+│   │       ├── openai_client.py     # OpenAI API integration
+│   │       └── firestore_service.py # Firebase Firestore
+│   ├── main.py                      # Application startup
+│   ├── requirements.txt             # Python dependencies
+│   └── firebase-service-account.json # Firebase credentials
+│
+├── README.md                         # This file
+├── API.md                           # API documentation
+├── ARCHITECTURE.md                  # System architecture
+├── DOCKER.md                        # Docker setup guide
+├── GETTING_STARTED.md              # Detailed getting started guide
+└── start.sh                         # Quick start script
 ```
 
-## 🔧 Configuration
+---
 
-### Backend Environment Variables (.env)
-
-```env
-# Required
-OPENAI_API_KEY=your_nvidia_api_key_here
-OPENAI_BASE_URL=https://integrate.api.nvidia.com/v1
-OPENAI_MODEL=openai/gpt-oss-120b
-
-# Optional (with defaults)
-APP_ENV=development
-HOST=0.0.0.0
-PORT=8000
-ALLOWED_ORIGINS=http://localhost:5173
-REQUEST_TIMEOUT_SECONDS=45
-MAX_INPUT_CHARS=4000
-RATE_LIMIT_REQUESTS=30
-RATE_LIMIT_WINDOW_SECONDS=60
-DEFAULT_TEMPERATURE=0.7
-DEFAULT_MAX_TOKENS=1024
-```
-
-### Frontend Environment Variables (.env)
-
-```env
-VITE_API_BASE_URL=http://localhost:8000
-```
-
-## 📡 API Endpoints
+## 🔌 API Endpoints
 
 ### Health Check
 ```bash
 GET /health
 ```
 
-Returns server status and configuration info.
-
-### Chat
+### Chat Completion
 ```bash
 POST /chat
 Content-Type: application/json
 
 {
-  "message": "What is the capital of France?",
-  "history": [
-    {"role": "user", "content": "Hello", "timestamp": "2026-03-22T..."},
-    {"role": "assistant", "content": "Hi! How can I help?", "timestamp": "2026-03-22T..."}
-  ],
-  "conversation_id": "uuid-string-optional",
-  "stream": false,
+  "message": "Hello, how are you?",
   "temperature": 0.7,
-  "max_tokens": 1024
+  "max_tokens": 512
 }
 ```
 
-Response (200 OK):
-```json
-{
-  "conversation_id": "uuid-string",
-  "response": "The capital of France is Paris.",
-  "model": "openai/gpt-oss-120b",
-  "timestamp": "2026-03-22T...",
-  "usage": {
-    "prompt_tokens": 15,
-    "completion_tokens": 10,
-    "total_tokens": 25
-  },
-  "status": "success"
-}
-```
-
-## 🎨 Design System
-
-### Colors (Dark Theme)
-- **Background**: `#0a0a0a` (deep charcoal)
-- **Surface**: `#11131f` (darker cards)
-- **Text**: `#f4f4f5` (light gray)
-- **Accent**: Indigo/Purple gradient (`#6366f1` to `#a855f7`)
-- **Borders**: White/10 opacity subtle dividers
-
-### Components
-- **Message Bubbles**: Gradient backgrounds for user, subtle for AI
-- **Input Area**: Auto-expanding textarea with character counter
-- **Loading States**: Skeleton loaders and typing indicators
-- **Animations**: Smooth fade-ins, slide-ups with Framer Motion
-
-## 🧪 Testing
-
-### Backend Test Request
+### Clear History
 ```bash
-curl -X POST http://localhost:8000/chat \
-  -H "Content-Type: application/json" \
-  -d '{
-    "message": "Hello, how are you?",
-    "history": [],
-    "temperature": 0.7,
-    "max_tokens": 256
-  }'
+POST /chat/clear
 ```
 
-### Frontend Development
-```bash
-npm run dev    # Start dev server
-npm run build  # Build for production
-npm run lint   # Run ESLint
-```
-
-## 🔒 Security Considerations
-
-- API keys are never exposed in frontend responses
-- CORS is configured to only allow specified origins
-- Input is sanitized to remove control characters
-- Request validation prevents malformed data
-- Rate limiting prevents abuse
-- HTTPS recommended for production
-- Session/conversation data stored locally on client
-
-## 📦 Dependencies
-
-### Frontend
-- **react** 19.2+ - UI library
-- **axios** - HTTP client
-- **tailwindcss** - CSS utility framework
-- **framer-motion** - Animation library
-- **react-markdown** - Markdown rendering
-- **lucide-react** - Icon library
-- **typescript** - Type safety
-- **vite** - Build tool
-
-### Backend
-- **fastapi** 0.116+ - Web framework
-- **uvicorn** - ASGI server
-- **openai** 1.109+ - OpenAI client
-- **pydantic** & **pydantic-settings** - Validation
-- **tenacity** - Retry logic
-- **python-dotenv** - Environment variables
-
-## 🚀 Deployment
-
-### Backend (Production)
-```bash
-# Build and run with Gunicorn + Uvicorn
-gunicorn app.main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker
-
-# Or Docker
-docker build -t chatbot-backend .
-docker run -p 8000:8000 --env-file .env chatbot-backend
-```
-
-### Frontend (Production)
-```bash
-# Build static assets
-npm run build
-
-# Serve with any static host (Vercel, Netlify, S3, etc.)
-npm run preview
-```
-
-## 🛠️ Troubleshooting
-
-### Backend Issues
-- **ModuleNotFoundError**: Ensure virtual environment is activated
-- **API Key Error**: Check `.env` file has correct NVIDIA API key
-- **CORS Error**: Verify `ALLOWED_ORIGINS` includes frontend URL
-- **Rate Limit**: Adjust `RATE_LIMIT_REQUESTS` in `.env`
-
-### Frontend Issues
-- **API Connection**: Check backend is running on correct port
-- **Blank Page**: Open browser console for error details
-- **Styling Issues**: Run `npm run build` to verify Tailwind compilation
-
-## 📝 License
-
-This is a demonstration project for educational purposes.
-
-## 🤝 Support
-
-For issues or questions:
-1. Check troubleshooting section above
-2. Review API response error codes
-3. Check browser/server console for detailed logs
-4. Verify environment configuration
+For detailed API documentation, see [API.md](./API.md)
 
 ---
 
-**Built with ❤️ using React, FastAPI, and NVIDIA's OpenAI-compatible API**
+## 🛠️ Technology Stack
+
+### Frontend
+| Technology | Purpose |
+|-----------|---------|
+| React 18+ | UI framework |
+| TypeScript | Type safety |
+| Vite | Build tool |
+| Tailwind CSS | Styling |
+| React Router | Navigation |
+| Firebase | Authentication |
+
+### Backend
+| Technology | Purpose |
+|-----------|---------|
+| FastAPI | Web framework |
+| Python 3.9+ | Language |
+| OpenAI SDK | LLM integration |
+| Firestore | Database |
+| Uvicorn | ASGI server |
+| Pydantic | Data validation |
+
+---
+
+## 🎨 Design System
+
+ChatterBox AI uses the **MONOLITH Design System** featuring:
+
+- **Color Palette**: Dark mode with accent colors
+- **Typography**: Custom headline and body fonts
+- **Spacing**: 8px-based scale for consistency
+- **Components**: Reusable, documented UI elements
+- **Animations**: Smooth CSS transitions and keyframes
+- **Accessibility**: WCAG 2.1 AA compliance
+
+---
+
+## 🔐 Security Features
+
+✅ **Input Validation** - All user inputs are sanitized
+✅ **Rate Limiting** - Protection against abuse
+✅ **CORS Configuration** - Controlled cross-origin access
+✅ **Error Handling** - Secure error messages
+✅ **Environment Variables** - Sensitive data protection
+✅ **Authentication** - Firebase-based user authentication
+
+---
+
+## 🐳 Docker Support
+
+Run the application in Docker containers:
+
+```bash
+# Build and run with Docker
+docker-compose up --build
+```
+
+See [DOCKER.md](./DOCKER.md) for detailed Docker setup instructions.
+
+---
+
+## 📚 Documentation
+
+- **[API Documentation](./API.md)** - Complete API reference
+- **[Architecture Guide](./ARCHITECTURE.md)** - System design and deployment
+- **[Getting Started](./GETTING_STARTED.md)** - Detailed setup walkthrough
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+---
+
+## 🙋 Support
+
+If you encounter any issues or have questions:
+
+1. **Check existing issues** - Browse [GitHub Issues](https://github.com/yourusername/chatterbox-ai/issues)
+2. **Read documentation** - Review [GETTING_STARTED.md](./GETTING_STARTED.md)
+3. **Create an issue** - [Report a bug or request feature](https://github.com/yourusername/chatterbox-ai/issues/new)
+
+---
+
+## 🚀 Roadmap
+
+- [ ] Voice input/output support
+- [ ] Conversation export (PDF, Markdown)
+- [ ] Advanced prompt engineering tools
+- [ ] Multi-model selection
+- [ ] Team collaboration features
+- [ ] Custom model fine-tuning
+- [ ] Mobile app (React Native)
+
+---
+
+## 👥 Team
+
+Built with ❤️ by the ChatterBox AI team.
+
+---
+
+<div align="center">
+
+**[⬆ back to top](#chatterbox-ai-)**
+
+Made with 🎨 and ☕ | [Report Bug](https://github.com/yourusername/chatterbox-ai/issues) | [Request Feature](https://github.com/yourusername/chatterbox-ai/issues)
+
+</div>

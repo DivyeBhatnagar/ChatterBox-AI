@@ -53,23 +53,39 @@ const features: Feature[] = [
 
 export const FeaturesSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     if (!sectionRef.current) return;
 
-    // Simple fade-in animation on mount
+    // Animate section header
+    gsap.from(headerRef.current, {
+      opacity: 0,
+      y: 40,
+      duration: 0.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+      },
+    });
+
+    // Animate cards with stagger on scroll
     cardsRef.current.forEach((card, index) => {
       if (card) {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        
-        gsap.to(card, {
-          opacity: 1,
-          y: 0,
+        gsap.from(card, {
+          opacity: 0,
+          y: 40,
           duration: 0.6,
-          ease: 'power2.out',
-          delay: index * 0.1,
+          delay: index * 0.08,
+          ease: 'cubic-bezier(0.16, 1, 0.3, 1)',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 75%',
+            toggleActions: 'play none none none',
+          },
         });
       }
     });
@@ -83,7 +99,7 @@ export const FeaturesSection = () => {
     <section id="features" ref={sectionRef} className="relative z-20 py-20 bg-black px-4 sm:px-6 lg:px-8 w-full" style={{ display: 'block' }}>
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Why Choose ChatterBox AI
           </h2>
