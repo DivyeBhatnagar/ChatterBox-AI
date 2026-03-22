@@ -51,6 +51,8 @@ export interface ConversationSummary {
   message_count: number
 }
 
+export type ChatHistoryItem = ConversationSummary;
+
 export interface ChatHistoryResponse {
   items: ConversationSummary[]
   total: number
