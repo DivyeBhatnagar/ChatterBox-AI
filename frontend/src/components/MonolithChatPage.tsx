@@ -66,7 +66,7 @@ export const MonolithChatPage: React.FC = () => {
       setIsNewChatMode(false);
       const loaded = await chatApi.loadConversation(convId);
       setConversationId(convId);
-      setMessages(loaded.messages.map((msg, idx) => ({
+      setMessages(loaded.messages.map((msg: any, idx: number) => ({
         id: `${idx}-${msg.role}`,
         role: msg.role as 'user' | 'assistant',
         content: msg.content,
